@@ -1,4 +1,4 @@
-
+#
 # ---- This code only scrapes the data from https://coinswitch.co/in ----
 
 
