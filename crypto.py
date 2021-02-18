@@ -2,8 +2,8 @@
 import requests
 from bs4 import BeautifulSoup
 from twilio.rest import Client  
-account_sid = 'ACf0674b11d73f776990ed6c5d2970aad2' #Your twilio account sid 
-auth_token = 'cc66f6803040271c6f5e32229d2132ef'    #Your twilio account token
+account_sid = 'ACf....' #Place your twilio account sid here
+auth_token = 'cc6...'    #Place your twilio account token here
 client = Client(account_sid, auth_token)           
 Doge_coin = requests.get("https://coinswitch.co/coins/dogecoin/dogecoin-to-inr").text #Doge-coin link
 btc_link=requests.get("https://coinswitch.co/coins/bitcoin/bitcoin-to-inr").text   #Bit-coin link---->Only need for scraping max and min value.
@@ -28,7 +28,7 @@ def Doge():
             print(op3)   #print current price
     if op2 > (high-0.1) or op2 < (low-0.1) :
         ''' Here it is if loop to compare the current price and send msg    '''
-        message = client.messages.create( from_='whatsapp:+14155238886',  body=op3, to='whatsapp:+917977941325')
+        message = client.messages.create( from_='whatsapp:+1**********',  body=op3, to='whatsapp:+91**********') #Replace * with your twilio no and whatsapp no.
         ''' You can also add multiple whatsapp no here by simply changing variable(message) name and whatsapp no'''        
         print(message.sid)
                 
@@ -53,7 +53,7 @@ def BTC():
             op3=(f'''Alert!!! {op1} - Price: {op2} ₹''')
             print(op3)
     if op2 > (high-25000) or op2 < (low-50000): #similar as above condition
-        message = client.messages.create( from_='whatsapp:+14155238886',  body=op3, to='whatsapp:+917977941325')        
+        message = client.messages.create( from_='whatsapp:+1**********',  body=op3, to='whatsapp:+91**********')        
         print(message.sid)        
     else:
         print("Everything is fine")    
